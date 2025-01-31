@@ -1,3 +1,7 @@
+import math
+
+
+
 # Approximation Method
 def Approximate(x0, tol):
     iter = 0
@@ -17,11 +21,8 @@ def Approximate(x0, tol):
     # print("Reached end of iterations")
     print("It will converge after %d iterations" %iter)
 
-
-def f(x):
-    return x*x*x + x*x + 2
-
-def Bisect(left, right, max, tol):
+def Bisect(f, left, right, max, tol):
+    print("This is Bisection Method")
     iter = 0
     
     while (abs(right - left) > tol and iter < max):
@@ -32,14 +33,60 @@ def Bisect(left, right, max, tol):
             right = p
         else:
             left = p
-            
-    return p
+    print(f"Root of {p} after {iter} iterations")
 
-#def FixedPoint(p0, tol, n0):
-    #i = 1
+def FixedPoint(g, p0, tol, n0):
+    i = 1
     
-    #while (i <= n0):
-       # p = 
+    print("This is Fixed-Point Method")
+    
+    while (i <= n0):
+        p = g(p0)
+        if math.isnan(p):
+            print("Diverges")
+            print("Failed after",i, "iterations")
+            break
+        
+        print(i,": ",p)
+        
+        if (abs(p-p0) < tol):
+            print("Converges")
+            print("Successful after",i, "iterations")
+            break
+        i += 1
+        p0 = p
+    
+def Newton(h, h_p, p_prev, tol, max):
+    print("This is Newton's Method")
+    
+    i = 1
+    
+    while (i <= max):
+        h_value = h(p_prev)
+        h_p_value = h_p(p_prev)
+        
+        if (h_p_value != 0):
+           p_next = (p_prev - h_value) / h_p_value 
+           if (abs(p_next - p_prev) < tol):
+               print(f"{p_next}")
+               return p_next
+               break
+           i += 1
+           p_prev = p_next
+        else:
+            print("The derivative is too small")
+            break
+    print("Max iterations reached")
+    print(f"{p_prev}")
+        
+            
+            
+        
+    
+    
+    
+    
+        
     
         
     
