@@ -8,8 +8,8 @@ Algorithms Programed: Approximation Method, Bisection, Fixed-Point Iteration, Ne
 
 Software: Uploaded to Github and coded in python on Eclipse
 
-Each algorithm will output the corresponding roots based on examples from powerpoint slides
-- Approximation: 
-- Bisection:
-- Fixed-Point:
-- Newton:
+Each algorithm will output the corresponding roots based on equations from the following pseudocode or java examples from powerpoint slides with parameters:
+- Approximation: x0 (initial guess), tol (tolerance)
+- Bisection: f (function), left/right (left and right interval bounds), max (maximum # of iterations), tol (tolerance)
+- Fixed-Point: g (function), p0 (initial guess), tol (tolerance), n0 (max # of iterations)
+- Newton: h/h_p (function and derivative), p_prev (initial approx.), tol (tolerance), n0 (max # of iterations)
