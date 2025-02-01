@@ -12,9 +12,9 @@ Approximate(1.5, .000001)
 print("\n")
 
 def f(x):
-    return (x*x*x + x*x + 2)
+    return (x*x*x + 4*x*x - 10)
 
-Bisect(f,1,10,100,.000001)
+Bisect(f,1,2,100,.001)
 
 print("\n")
 
